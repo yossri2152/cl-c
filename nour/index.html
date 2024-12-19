@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Définit la déclaration du type de document et indique que le langage est en français -->
+  <meta charset="UTF-8">
+  <!-- Définit l'encodage des caractères en UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Assure que la mise en page est adaptée aux différents appareils (responsive) -->
+  <title>Voyage et Réservation</title>
+  <!-- Définit le titre de la page affiché dans l'onglet du navigateur -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lien vers le fichier CSS externe pour les styles de la page -->
+</head>
+<body>
+  <!-- Contenu principal de la page -->
+
+  <!-- Navigation -->
+  <header>
+    <!-- Section d'en-tête contenant la navigation et l'image héroïque -->
+    <nav>
+      <ul>
+        <!-- Liste des liens de navigation -->
+        <li><a href="#accueil">Accueil</a></li>
+        <!-- Lien vers la section Accueil -->
+        <li><a href="#a-propos">À propos</a></li>
+        <!-- Lien vers la section À propos -->
+        <li><a href="#destination">Destination</a></li>
+        <!-- Lien vers la section Destination -->
+        <li><a href="#contact">Contact</a></li>
+        <!-- Lien vers la section Contact -->
+      </ul>
+    </nav>
+    <div class="hero">
+      <!-- Section d'image héroïque avec le titre principal et un bouton -->
+      <h1>Explorez le monde</h1>
+      <!-- Titre principal de la page -->
+      <button id="reserve-btn">Réserver maintenant</button>
+      <!-- Bouton pour accéder à la section de réservation -->
+    </div>
+  </header>
+
+  <!-- Formulaire de réservation -->
+  <section id="reservation">
+    <!-- Section dédiée au formulaire de réservation -->
+    <h2>Planifiez votre voyage</h2>
+    <!-- Sous-titre de la section -->
+    <form id="travel-form">
+      <!-- Début du formulaire de réservation -->
+
+      <!-- Sélection de la date -->
+      <div class="section">
+        <label for="date">Choisissez une date :</label>
+        <!-- Étiquette pour le champ de sélection de la date -->
+        <input type="date" id="date" required>
+        <!-- Champ pour choisir une date -->
+      </div>
+
+      <!-- Options disponibles -->
+      <div class="section">
+        <label for="options">Choisissez une option :</label>
+        <!-- Étiquette pour la liste des options disponibles -->
+        <select id="options" disabled>
+          <!-- Liste déroulante désactivée jusqu'à ce qu'une date soit choisie -->
+          <option value="">Sélectionnez une date d'abord</option>
+          <!-- Option par défaut -->
+        </select>
+      </div>
+
+      <!-- Informations utilisateur -->
+      <div class="section">
+        <!-- Champ pour saisir les informations de l'utilisateur -->
+        <label for="user-number">Numéro d'utilisateur :</label>
+        <input type="text" id="user-number" placeholder="Entrez votre numéro d'utilisateur" required>
+        <!-- Champ pour le numéro d'utilisateur -->
+
+        <label for="cin">CIN :</label>
+        <input type="text" id="cin" placeholder="Entrez votre CIN" required>
+        <!-- Champ pour le CIN -->
+
+        <label for="first-name">Nom :</label>
+        <input type="text" id="first-name" placeholder="Entrez votre nom" required>
+        <!-- Champ pour le nom -->
+
+        <label for="last-name">Prénom :</label>
+        <input type="text" id="last-name" placeholder="Entrez votre prénom" required>
+        <!-- Champ pour le prénom -->
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" placeholder="Entrez votre email" required>
+        <!-- Champ pour l'email -->
+      </div>
+
+      <!-- Confirmation de réservation -->
+      <button id="reserve" disabled>Réserver</button>
+      <!-- Bouton pour soumettre la réservation, désactivé par défaut -->
+      <div id="confirmation" class="hidden">
+        <!-- Section affichée après confirmation -->
+        <h2>Confirmation</h2>
+        <!-- Titre de la confirmation -->
+        <p id="details"></p>
+        <!-- Détails de la réservation -->
+        <p id="ticket-code"></p>
+        <!-- Code du billet généré -->
+      </div>
+    </form>
+  </section>
+
+  <!-- Vidéo des villes -->
+  <section id="video-section">
+    <!-- Section pour afficher une vidéo des destinations -->
+    <h2>Découvrez des destinations incroyables</h2>
+    <!-- Sous-titre de la section -->
+    <video autoplay muted loop>
+      <!-- Vidéo avec lecture automatique, muet et en boucle -->
+      <source src="cities.mp4" type="video/mp4">
+      <!-- Source de la vidéo -->
+      Votre navigateur ne supporte pas la lecture des vidéos.
+      <!-- Message affiché si la vidéo n'est pas prise en charge -->
+    </video>
+  </section>
+
+  <!-- Images interactives des régions -->
+  <section id="regions">
+    <!-- Section contenant des images interactives des régions -->
+    <h2>Nos régions populaires</h2>
+    <!-- Sous-titre de la section -->
+    <div class="region-grid">
+      <!-- Grille des régions -->
+      <div class="region" style="background-image: url('paris.jpg');">
+        <!-- Image de Paris -->
+        <span class="description">Paris : La ville lumière</span>
+        <!-- Description affichée au survol -->
+      </div>
+      <div class="region" style="background-image: url('england.jpg');">
+        <!-- Image de l'Angleterre -->
+        <span class="description">England : Les châteaux historiques</span>
+        <!-- Description affichée au survol -->
+      </div>
+      <div class="region" style="background-image: url('spain.jpg');">
+        <!-- Image de l'Espagne -->
+        <span class="description">Spain : L'art et la culture vibrants</span>
+        <!-- Description affichée au survol -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <!-- Pied de page -->
+    <p>© 2024 Voyage et Réservation - Tous droits réservés.</p>
+    <!-- Texte du pied de page -->
+  </footer>
+
+  <script src="script.js"></script>
+  <!-- Lien vers le fichier JavaScript externe -->
+</body>
+</html>

@@ -1,0 +1,142 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif; /* Définit la police pour tout le document */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime les espaces intérieurs par défaut */
+    color: #333; /* Définit une couleur de texte sombre */
+    line-height: 1.6; /* Définit l'espacement vertical entre les lignes */
+    position: relative; /* Définit une position de base pour l'arrière-plan flou */
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+::before, ::after {
+    box-sizing: inherit; /* Adopte la boîte de dimensionnement du parent */
+}
+
+/* Arrière-plan flou pour toute la page */
+body::before {
+    content: ""; /* Insère un pseudo-élément vide */
+    position: fixed; /* Positionne l'arrière-plan de manière fixe */
+    top: 0; /* Positionne au bord supérieur */
+    left: 0; /* Positionne au bord gauche */
+    width: 100%; /* Occupe toute la largeur */
+    height: 100%; /* Occupe toute la hauteur */
+    z-index: -1; /* Place derrière tout le contenu */
+    background-image: url('cit.jpg'); /* Image d'arrière-plan */
+    background-size: cover; /* Recouvre toute la zone sans déformation */
+    background-position: center; /* Centre l'image */
+    filter: blur(10px); /* Ajoute un effet de flou */
+    transform: scale(1.1); /* Évite les bordures visibles dues au flou */
+}
+
+/* Header */
+header {
+    position: relative; /* Permet de positionner son contenu à l'intérieur */
+    height: 100vh; /* Occupe la hauteur complète de la fenêtre */
+    color: white; /* Définit la couleur du texte en blanc */
+    text-align: center; /* Centre le texte horizontalement */
+}
+
+/* Navigation */
+nav ul {
+    display: flex; /* Dispose les éléments en ligne */
+    justify-content: center; /* Centre les éléments horizontalement */
+    list-style: none; /* Supprime les puces des listes */
+    padding: 20px 0; /* Ajoute un espace en haut et en bas */
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+}
+
+nav ul li {
+    margin: 0 15px; /* Ajoute un espace entre les éléments de la navigation */
+}
+
+nav ul li a {
+    color: white; /* Texte blanc */
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 18px; /* Taille du texte */
+}
+
+/* Héros */
+.hero h1 {
+    margin: 0; /* Supprime la marge */
+    padding-top: 50px; /* Ajoute un espace en haut */
+    font-size: 50px; /* Taille de police importante */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Ajoute une ombre au texte */
+}
+
+.hero button {
+    margin-top: 20px; /* Espace au-dessus du bouton */
+    padding: 10px 20px; /* Espace intérieur du bouton */
+    font-size: 18px; /* Taille de la police */
+    background: #007BFF; /* Couleur de fond bleu */
+    color: white; /* Texte blanc */
+    border: none; /* Supprime les bordures */
+    border-radius: 5px; /* Arrondit les coins */
+    cursor: pointer; /* Change le curseur en pointeur */
+}
+
+.hero button:hover {
+    background: #0056b3; /* Change la couleur de fond au survol */
+}
+
+/* Sections */
+section {
+    padding: 50px 20px; /* Ajoute des espaces intérieurs */
+    text-align: center; /* Centre le texte */
+    background: rgba(255, 255, 255, 0.8); /* Fond blanc semi-transparent */
+    border-radius: 10px; /* Arrondit les coins */
+    margin: 20px auto; /* Ajoute un espace extérieur vertical et centre horizontalement */
+    max-width: 80%; /* Limite la largeur maximale */
+}
+
+#video-section video {
+    width: 80%; /* Définit la largeur de la vidéo */
+    border-radius: 10px; /* Arrondit les coins */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Ajoute une ombre autour de la vidéo */
+}
+
+/* Grille des régions */
+.region-grid {
+    display: flex; /* Dispose les éléments en ligne */
+    flex-wrap: wrap; /* Permet un retour à la ligne si nécessaire */
+    gap: 20px; /* Ajoute de l'espace entre les éléments */
+    justify-content: center; /* Centre les éléments horizontalement */
+}
+
+.region {
+    position: relative; /* Permet de positionner la description à l'intérieur */
+    width: 300px; /* Largeur fixe des régions */
+    height: 200px; /* Hauteur fixe des régions */
+    background-size: cover; /* Recouvre toute la région avec l'image */
+    background-position: center; /* Centre l'image dans chaque région */
+    border-radius: 10px; /* Arrondit les coins */
+    overflow: hidden; /* Cache le contenu dépassant les bords */
+    cursor: pointer; /* Change le curseur en pointeur */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajoute une ombre autour de la région */
+}
+
+.region .description {
+    position: absolute; /* Positionne au sein de la région */
+    bottom: 0; /* Place au bas de la région */
+    left: 0; /* Place au bord gauche */
+    right: 0; /* Place au bord droit */
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent noir */
+    color: white; /* Texte blanc */
+    padding: 10px; /* Ajoute un espace intérieur */
+    text-align: center; /* Centre le texte horizontalement */
+    font-size: 14px; /* Taille de police modeste */
+    opacity: 0; /* Rends invisible par défaut */
+    transition: opacity 0.3s ease-in-out; /* Animation fluide de l'opacité */
+}
+
+.region:hover .description {
+    opacity: 1; /* Rend visible au survol */
+}
+
+/* Footer */
+footer {
+    background: #333; /* Fond gris foncé */
+    color: white; /* Texte blanc */
+    padding: 20px; /* Ajoute un espace intérieur */
+    text-align: center; /* Centre le texte */
+}
